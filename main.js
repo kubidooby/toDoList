@@ -18,9 +18,14 @@ const removeTask = (e) => {
   renderList();
 };
 
+const submitEnable = () => {
+  if (taskInput.value === "")
+    document.querySelector("form button").disabled = true;
+  else document.querySelector("form button").disabled = false;
+};
+
 const addTask = (e) => {
   e.preventDefault();
-  if (taskInput.value === "") return;
   const newTask = document.createElement("li");
   newTask.className = "task";
   newTask.innerHTML = taskInput.value + "<button>Usuń</button>";
@@ -29,7 +34,7 @@ const addTask = (e) => {
   taskCounter.textContent = toDoList.length;
   taskList.appendChild(newTask);
   renderList();
-  document.querySelector(".task button").addEventListener("click", removeTask);
+  newTask.querySelector(".task button").addEventListener("click", removeTask);
 };
 
 const searchTask = (e) => {

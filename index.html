@@ -11,7 +11,13 @@
       <input type="text" onkeyup="submitEnable()" />
       <button disabled>Dodaj</button>
     </form>
-    <input class="search" type="text" onfocus='this.value=""' value="Szukaj" />
+    <input
+      class="search"
+      type="text"
+      onfocus='this.value=""'
+      value="Szukaj"
+      onkeyup="searchTask()"
+    />
     <h1>Liczba zadań: <span>0</span></h1>
     <ul></ul>
     <script src="main.js"></script>

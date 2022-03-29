@@ -42,8 +42,8 @@ const searchTask = (e) => {
   const filtr = toDoList.filter((li) =>
     li.textContent.toLowerCase().includes(searchText)
   );
-  taskList.textContent = "";
-  filtr.forEach((li) => taskList.appendChild(li));
+  toDoList.forEach((element) => (element.style.display = "none"));
+  filtr.forEach((element) => (element.style.display = "list-item"));
 };
 
 document.querySelector("form.add").addEventListener("submit", addTask);
